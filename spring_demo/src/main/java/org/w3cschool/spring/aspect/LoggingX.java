@@ -1,4 +1,4 @@
-package org.w3cschool;
+package org.w3cschool.spring.aspect;
 
 /**
  * xml配置
