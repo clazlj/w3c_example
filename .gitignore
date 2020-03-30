@@ -1,0 +1,16 @@
+# Created by .ignore support plugin (hsz.mobi)
+### Example user template template
+### Example user template
+
+# IntelliJ project files
+.idea
+*.iml
+out
+gen
+*/target/
+target/classes/rebel.xml
+*.lock
+*/disconf/download/*
+*/logs/info.log
+jdd_info.ipr
+jdd_info.iws
