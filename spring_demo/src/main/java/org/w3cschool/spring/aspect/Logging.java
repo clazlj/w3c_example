@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 @Aspect
 @Component
 public class Logging {
-    @Pointcut("execution(* org.w3cschool.*.*(..))")
+    @Pointcut("execution(* org.w3cschool.spring.aspect.*.*(..))")
     private void selectAll(){}
 
     @Before("selectAll()")

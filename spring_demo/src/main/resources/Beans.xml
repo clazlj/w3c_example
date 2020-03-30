@@ -5,7 +5,7 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
-    <!--<aop:aspectj-autoproxy/>-->
+    <aop:aspectj-autoproxy/>
 
     <!--<context:component-scan base-package="org.w3cschool"/>-->
 
@@ -14,19 +14,18 @@
         <property name="age" value="11"/>
     </bean>
 
-    <!--<bean id="logging" class="Logging"/>-->
+    <bean id="logging" class="org.w3cschool.spring.aspect.Logging"/>
 
 
     <!--xml配置aspect-->
-    <aop:config>
-        <aop:aspect id="log" ref="loggingX">
-            <aop:pointcut id="selectAll" expression="execution(* org.w3cschool.spring.aspect.*.*(..))"/>
-            <aop:before method="beforeAdvice" pointcut-ref="selectAll"/>
-            <aop:after method="afterAdvice" pointcut-ref="selectAll"/>
-            <aop:after-returning method="afterReturningAdvice" pointcut-ref="selectAll" returning="retVal"/>
-            <aop:after-throwing method="afterThrowingAdvice" pointcut-ref="selectAll" throwing="ex"/>
-        </aop:aspect>
-    </aop:config>
-
-    <bean id="loggingX" class="org.w3cschool.spring.aspect.LoggingX"/>
+    <!--<aop:config>-->
+        <!--<aop:aspect id="log" ref="loggingX">-->
+            <!--<aop:pointcut id="selectAll" expression="execution(* org.w3cschool.spring.aspect.*.*(..))"/>-->
+            <!--<aop:before method="beforeAdvice" pointcut-ref="selectAll"/>-->
+            <!--<aop:after method="afterAdvice" pointcut-ref="selectAll"/>-->
+            <!--<aop:after-returning method="afterReturningAdvice" pointcut-ref="selectAll" returning="retVal"/>-->
+            <!--<aop:after-throwing method="afterThrowingAdvice" pointcut-ref="selectAll" throwing="ex"/>-->
+        <!--</aop:aspect>-->
+    <!--</aop:config>-->
+    <!--<bean id="loggingX" class="org.w3cschool.spring.aspect.LoggingX"/>-->
 </beans>
