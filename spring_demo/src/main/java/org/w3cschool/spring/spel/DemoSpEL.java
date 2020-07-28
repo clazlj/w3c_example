@@ -44,5 +44,42 @@ public class DemoSpEL {
         boolean trueValue3 = parser.parseExpression("'5.00' matches '^-?\\d+(\\.\\d{2})?$'").getValue(Boolean.class);
         boolean falseValue3 = parser.parseExpression("'5.0067' matches '^-?\\d+(\\.\\d{2})?$'").getValue(Boolean.class);
 
+        LogicalOperators(parser);
+
+        MathematicalOperators(parser);
+
+        Types(parser);
+
+        TernaryOperator(parser);
     }
+
+    private static void LogicalOperators(ExpressionParser parser) {
+        Boolean falseValue = parser.parseExpression("true and false").getValue(Boolean.class);
+
+        Boolean trueValue = parser.parseExpression("true or false").getValue(Boolean.class);
+
+        Boolean falseValue1 = parser.parseExpression("!true").getValue(Boolean.class);
+    }
+
+    private static void MathematicalOperators(ExpressionParser parser) {
+        Integer two = parser.parseExpression("1+1").getValue(Integer.class);
+
+        String testString = parser.parseExpression("'test'+' '+'string'").getValue(String.class);
+
+        Integer four = parser.parseExpression("1 - -3").getValue(Integer.class);
+
+//        ……
+    }
+
+    private static void Types(ExpressionParser parser) {
+        Class dateClass = parser.parseExpression("T(java.util.Date)").getValue(Class.class);
+        Class stringClass = parser.parseExpression("T(String)").getValue(Class.class);
+    }
+
+    //If-Then-Else
+    private static void TernaryOperator(ExpressionParser parser) {
+        String falseString = parser.parseExpression("false?'trueExp':'falseExp'").getValue(String.class);
+    }
+
+
 }
