@@ -44,6 +44,7 @@ public class Logging {
         //stop stopwatch
         sw.stop();
         long totalTimeMillis = sw.getTotalTimeMillis();
+        System.out.println(String.format("Total running time:%sms", totalTimeMillis));
         return retVal;
     }
 }
