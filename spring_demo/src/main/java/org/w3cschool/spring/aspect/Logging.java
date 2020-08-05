@@ -34,7 +34,8 @@ public class Logging {
 
     @AfterReturning(pointcut = "selectAll()", returning = "retVal")
     public void afterReturningAdvice(Object retVal) {
-        System.out.println("Returning:" + retVal.toString());
+        //void方法返回null
+        System.out.println("Returning:" + (retVal == null ? null : retVal.toString()));
     }
 
     @AfterThrowing(pointcut = "selectAll()", throwing = "ex")
@@ -47,6 +48,7 @@ public class Logging {
         //start stopwatch
         StopWatch sw = new StopWatch();
         sw.start();
+        //void方法返回null
         Object retVal = pjp.proceed();
         //stop stopwatch
         sw.stop();

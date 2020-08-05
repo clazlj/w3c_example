@@ -10,6 +10,7 @@ public class MainApp {
         Student student = (Student) context.getBean("student");
         student.getName();
         student.getAge();
+        student.setAge(6);
         student.printThrowException();
     }
 }
