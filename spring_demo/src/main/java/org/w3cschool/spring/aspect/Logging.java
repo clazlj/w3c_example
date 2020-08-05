@@ -27,6 +27,15 @@ public class Logging {
         System.out.println("Going to setup student profile.");
     }
 
+    /**
+     * args传递参数
+     * @param age
+     */
+    @Before("selectAll() && args(age))")
+    public void beforeAdvicePassParameter(Integer age) {
+        System.out.println("Going to setup student profile.age:" + age);
+    }
+
     @After("selectAll()")
     public void afterAdvice() {
         System.out.println("Student profile has been setup.");
