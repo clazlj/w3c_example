@@ -3,7 +3,8 @@ package org.w3cschool.spring.aspect;
 import org.springframework.context.annotation.*;
 
 @Configuration
-@ComponentScans(value = {@ComponentScan(basePackages = "org.w3cschool.spring.aspect")})
+//@ComponentScans(value = {@ComponentScan(basePackages = "org.w3cschool.spring.aspect")})
+@ComponentScan(basePackages = "org.w3cschool.spring.aspect")
 @EnableAspectJAutoProxy
 public class ConfigureApp {
     public static void main(String[] args) {
